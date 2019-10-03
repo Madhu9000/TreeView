@@ -1,53 +1,21 @@
 <template>
-<div id="app">
-    <h1>Vue Tree Browser</h1>
-    <TreeBrowser 
-      :node="root"
-      @onClick="nodeWasClicked"
-      id = "task"
-    />
-  </div>
+  <v-app id="inspire">
+      <navbar/>
+  </v-app>
 </template>
 
 <script>
-import TreeBrowser from './components/TreeBrowser.vue'
-import root from './root.json'
+import navbar from './components/Navbar';
 
 export default {
-  name: 'app',
-  data() {
-    return {
-      root,
-    }
-  },
-  methods: {
-    nodeWasClicked(node) {
-      alert(node.name);
-    }
-  },
+  name: 'App',
   components: {
-    TreeBrowser
-  }
-}
+    navbar,
+  },
+};
 </script>
-
-<style>
-body{
- background-color: #333;
-  color: white;
-}
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  background-color: grey;
-  height: 100%;
-  width: 40%;
-}
-#task{
-  width: 100%;
-  height: 100%;
-    overflow-x: scroll;
+<style scoped>
+body {
+  overflow-x: hidden;
 }
 </style>
